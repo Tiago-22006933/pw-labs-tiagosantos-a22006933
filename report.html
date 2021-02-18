@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Report lab1</title>
+</head>
+<body style="background-color: rgba(0, 0, 0, 0.05); padding-left: 20px; font-family:arial;">
+    <h1 style="color:rgb(0, 1, 100);">Laboratorio 1: report</h1>
+    <p>
+        Este reportestá dividido pelos seguintes tópicos:
+    </p>
+    <ul>
+        <li><a href="#IPs" style="color: black">Investigação da localização dos IP's detetados</a></li>
+        <li><a href="#http" style="color: black">O protocolo HTTP</a></li>
+    </ul> 
+    <h2 style="color:rgb(0, 1, 100);" id="IPs">Investigação da localização dos IP's detetados</h2>
+    <p>
+        Em primeiro lugar foi obtida a informação referente aos IP's do computador, do telemóvel e do servidor onde se encontra alojada a app.<br>
+        Os IP's do computador e do telemóvel estão localizados onde deveriam estar conforme se verifica nas imagens abaixo.
+    </p>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/ipdesktop.jpg" alt="Localização PC" style="width:auto;height:550px; border-radius: 12px;"></th>
+            <th><img src="img/ipmobile.jpg" alt="Localização telemóvel" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Localização do computador</td>
+            <td style="color:rgb(0, 1, 100);">Localização do telemóvel</td>
+        </tr>
+    </table>
+    <p>
+        Verificamos que apesar das coordenadas serem exatamente as mesmas nas duas situações, no caso da localização do telemóvel, é apresentado no mapa como estando algures no rio tejo.<br>
+        De seguida fiz um nslookup do endereço da app para encontrar os IP's associados à mesma. Com o endereço de IP obtive o detalhe da localização do mesmo.
+    </p>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/nslookup.jpg" alt="Nslookup do endereço da app" style="width:auto;height:550px; border-radius: 12px;"></th>
+            <th><img src="img/ipaws.jpg" alt="Localização do servidor onde está alojada a app" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Nslookup do endereço da app</td>
+            <td style="color:rgb(0, 1, 100);">Localização do servidor onde está alojada a app</td>
+        </tr>
+    </table>
+    <p>
+        Podemos verificar que a app está alojada num servidor da Amazon web services (AWS) localizado na Irlanda.<br>
+        Em relação ao nslookup verificamos que existem 8 endereços publicos associados ao mesmo mas é uma situação normal, e acontece de forma a criar redundância.<br>
+        Fiz também um tracerout ao endereço da app mas este perdeu-se a meio. Foi utilizado a ferramenta <a href="https://geotraceroute.com/" target="_blank">geotraceroute.com</a> conforme o enunciado.<br>
+        Segundo a ferramenta <a href="https://geotraceroute.com/" target="_blank">geotraceroute.com</a> o ultimo salto foi na Alemanha em Frankfurt mas isto pode-se dever ao tracerout não ter terminado.
+    </p>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/tracert.jpg" alt="Traceroute" style="width:auto;height:550px; border-radius: 12px;"></th>
+            <th><img src="img/geotrace.jpg" alt="Geotrace" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Traceroute do endereço da app</td>
+            <td style="color:rgb(0, 1, 100);">Geotrace do endereço da app</td>
+        </tr>
+    </table>
+    <h2 style="color:rgb(0, 1, 100);" id="http">O protocolo HTTP</h2>
+    <p>
+        Quando acedemos à nossa app verificamos que nos é apresentada a seguinte página:
+    </p>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/index.jpg" alt="Index.html" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Index.html</td>
+        </tr>
+    </table>
+    <p>
+        Ao inspecionarmos o código fonte dessa página verificamos que de facto corresponde ao código html por nós publicado no git.
+    </p>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/inspect.jpg" alt="Código fonte" style="width:auto;height:550px; border-radius: 12px;"></th>
+            <th><img src="img/index_vscode.jpg" alt="Código html submetido" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Inspeção do código fonte</td>
+            <td style="color:rgb(0, 1, 100);">Código html submetido no git</td>
+        </tr>
+    </table>
+    <p>
+        De seguida verificamos com ajuda da ferramenta do chrome (edge chromium) os ficheiros descarregados.<br>
+        Verificamos pela imagem seguinte que foram feitos dois pedidos ao servidor ambos concluidos com o código http 200 (OK).<br>
+        Os pedidos foram feitos aos seguintes url's:
+    </p>
+    <ul>
+        <li>https://pwlaboratorio1.herokuapp.com/ - Este ficheiro é referente ao index.html e é do tipo document, foi feito um download de 1.1 kB e demorou 64 ms a ser descarregado.</li>
+        <li>https://pwlaboratorio1.herokuapp.com/img/wordcloud.png - Este ficheiro é a figura apresentada na página, é do tipo png e estava em cache pelo que não foi feito o download da mesma.</li>
+    </ul>
+    <img src="img/network.jpg" alt="Ficheiros descarregados" style="width:auto;height:550px; border-radius: 12px;">
+    <p>
+        De seguida são apresentados os quadros Preview, Headers e Timing de ambos os ficheiros lado a lado respetivamente.
+    </p>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/preview_index.jpg" alt="Preview index.html" style="width:auto;height:550px; border-radius: 12px;"></th>
+            <th><img src="img/preview_png.jpg" alt="Preview wordcloud.png" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Preview index.html</td>
+            <td style="color:rgb(0, 1, 100);">Preview wordcloud.png</td>
+        </tr>
+    </table>
+    <p>
+        Neste separador é feita a pré visualização do ficheiro descarregado. No caso do ficheiro index.html é apresentada a página e no caso do ficheiro wordcloud.png é apresentada a imagem.
+    </p>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/headers_index.jpg" alt="Headers index.html" style="width:auto;height:550px; border-radius: 12px;"></th>
+            <th><img src="img/headers_png.jpg" alt="Headers wordcloud.png" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Headers index.html</td>
+            <td style="color:rgb(0, 1, 100);">Headers wordcloud.png</td>
+        </tr>
+    </table>
+    <p>
+        Neste separador são apresentados os vários headers que se encontram no pedido GET (neste caso) feito ao servidor. Os headers indicam-nos por exemplo o código de estado do pedido, neste caso 200 (OK), qual o metodo (GET), o IP e porto do servidor onde está alojado o ficheiro assim como outras informações relevantes.
+    </p>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/timings_index.jpg" alt="Timings index.html" style="width:auto;height:550px; border-radius: 12px;"></th>
+            <th><img src="img/timings_png.jpg" alt="Timings wordcloud.png" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Timings index.html</td>
+            <td style="color:rgb(0, 1, 100);">Timings wordcloud.png</td>
+        </tr>
+    </table>
+    <p>
+        Neste separador temos a informação referente aos tempos de resposta ao pedido feito, como o tempo que estivemops em queue para iniciar o download do ficheiro e quanto tempo demorou a transferencia.
+    </p>
+    <br>
+    <p>
+        Para concluir apresentamos a mesma informação para a página da lusofona e os separadores Preview, Headers e Timings para um dos ficheiros.
+    </p>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/lusofona.jpg" alt="Página da Lusófona" style="width:auto;height:550px; border-radius: 12px;"></th>
+            <th><img src="img/lusofona_preview.jpg" alt="Preview www.ulusofona.pt" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Página da Lusófona</td>
+            <td style="color:rgb(0, 1, 100);">Preview www.ulusofona.pt</td>
+        </tr>
+    </table>
+    <br>
+    <table>
+        <tr style="text-align: left;">
+            <th><img src="img/lusofona_headers.jpg" alt="Headers www.ulusofona.pt" style="width:auto;height:550px; border-radius: 12px;"></th>
+            <th><img src="img/lusofona_timings.jpg" alt="Timings www.ulusofona.pt" style="width:auto;height:550px; border-radius: 12px;"></th>
+        </tr>
+        <tr>
+            <td style="color:rgb(0, 1, 100);">Headers www.ulusofona.pt</td>
+            <td style="color:rgb(0, 1, 100);">Timings www.ulusofona.pt</td>
+        </tr>
+    </table>
+</body>
+</html>
