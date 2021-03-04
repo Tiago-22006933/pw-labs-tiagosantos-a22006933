@@ -22,7 +22,7 @@
                   <label for="Apelido">Apelido:</label>
                   <input type="text" id="Apelido" name="Apelido" placeholder="Apelido" required>
                   <label for="email">Email:</label>
-                  <input type="email" id="email" name="email" placeholder="Email" required size="35">
+                  <input type="email" id="email" name="email" placeholder="Email" required multiple size="35">
             </fieldset>
             <fieldset>
                   <legend>Quizz:</legend>
@@ -35,11 +35,13 @@
                   <label for="pais">Espanha</label><br>
                   <input type="radio" id="pais" name="pais" value="Itália">
                   <label for="pais">Itália</label><br>
-                  <label for="ano_patrimonio_mundial">Ano em que o centro historico passou a patrimonio mundial:</label>
-                  <input type="date" id="ano_patrimonio_mundial" name="ano_patrimonio_mundial"><br>
+                  <label for="ano_patrimonio_mundial">Ano em que o centro historico passou a patrimonio mundial (ano par):</label>
+                  <input type="number" id="ano_patrimonio_mundial" name="ano_patrimonio_mundial" step="2"><br>
                   <label for="food">Comida mais famosa do país de origem de Florença:</label>
                   <input type="text" id="food" name="food">
                   <p>A comida mais famosa é: <b><output name="foodcorrect"></output></b></p>
+                  <label for="ufo">Dia de um avistamento de OVNI sobre Florença:</label>
+                  <input type="date" id="ufo" name="ufo"><br>
                   <input type="submit" value="Submit">
             </fieldset>
       </form> 
