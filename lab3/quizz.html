@@ -14,7 +14,7 @@
       <br>
       <a href="index.html">Introdução</a> | <a href="local.html">Localização</a> | <a href="multimedia.html">Multimedia</a> | <a href="info.html">Informação</a> | <b><a href="quizz.html">Quizz</a></b> | <a href="comentarios.html">Comentários</a> | <a href="../index.html">Home</a>
       <h3>Quizz</h3>
-      <form action="tiagosantos025£gmail.com" autocomplete="on" method="post">
+      <form action="mailto:tiagosantos025@gmail.com" autocomplete="on" method="post" oninput="foodcorrect.value=food.value" style="box-sizing:border-box;">
             <fieldset>
                   <legend>Dados do utilizador:</legend>
                   <label for="nome">Nome:</label>
@@ -37,6 +37,9 @@
                   <label for="pais">Itália</label><br>
                   <label for="ano_patrimonio_mundial">Ano em que o centro historico passou a patrimonio mundial:</label>
                   <input type="date" id="ano_patrimonio_mundial" name="ano_patrimonio_mundial"><br>
+                  <label for="food">Comida mais famosa do país de origem de Florença:</label>
+                  <input type="text" id="food" name="food">
+                  <p>A comida mais famosa é: <b><output name="foodcorrect"></output></b></p>
                   <input type="submit" value="Submit">
             </fieldset>
       </form> 
