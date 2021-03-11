@@ -5,7 +5,7 @@ header{
 }
 
 nav{
-    background: rgb(92, 93, 143);
+    background-color: rgb(92, 93, 143);
     padding: 5pt;
     color: rgb(25, 25, 37);;
 }
@@ -13,6 +13,7 @@ nav{
 body{
     background-color:rgb(227, 227, 236);
     font-family: 'Archivo', sans-serif;
+    margin-bottom:55px;
 }
 
 nav a:link{
@@ -32,5 +33,22 @@ nav a:active{
 }
 
 main{
-    background: rgb(227, 227, 236);;
+    background-color: rgb(227, 227, 236);;
+}
+
+footer{
+    position: fixed;
+    height: 55px;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(159, 160, 221);
+    color: white;
+    text-align: center;
+}
+
+footer p {
+    color: #fff;
+    font-size:15pt;
+    display: inline-block;
 }
