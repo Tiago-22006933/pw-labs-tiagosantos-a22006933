@@ -1,0 +1,36 @@
+header{
+    background: rgb(200, 201, 223);
+    padding-bottom: 10pt;
+    padding-left: 10pt;
+}
+
+nav{
+    background: rgb(92, 93, 143);
+    padding: 5pt;
+    color: rgb(25, 25, 37);;
+}
+
+body{
+    background-color:rgb(227, 227, 236);
+    font-family: 'Archivo', sans-serif;
+}
+
+nav a:link{
+    color: rgb(252, 252, 252);
+}
+
+nav a:visited{
+    color: rgb(226, 226, 226);
+}
+
+nav a:hover{
+    color: rgb(130, 177, 140);
+}
+
+nav a:active{
+    color: rgb(90, 122, 97);
+}
+
+main{
+    background: rgb(227, 227, 236);;
+}
